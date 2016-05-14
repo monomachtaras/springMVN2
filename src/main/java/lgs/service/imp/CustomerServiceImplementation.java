@@ -1,5 +1,7 @@
 package lgs.service.imp;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,18 @@ public class CustomerServiceImplementation implements CustomerService {
 	public void addCustomer(String log, String pass, String mail) {
 		cusD.addCustomer(new Customer(log, pass, mail));
 		
+	}
+
+
+	public Customer getCustomerById(int id) {
+		cusD.getCustomerById(id);
+		return null;
+	}
+
+
+	public List<Customer> getAllCustomers() {
+		
+		return cusD.getAllCustomers();
 	}
 
 }

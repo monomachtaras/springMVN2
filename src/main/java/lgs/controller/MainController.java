@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import lgs.entity.Customer;
+import lgs.service.CityService;
 import lgs.service.CustomerService;
 
 @Controller
@@ -17,21 +18,40 @@ public class MainController {
 	@Autowired
 	private CustomerService cusS;
 	
-	@RequestMapping("/")
-	public String welcome(Model model){ 
-		
-		model.addAttribute("xxx", "some case");
-		return "welcome";}
+	@Autowired
+	private CityService cityS;
 	
-	@RequestMapping(value="add", method=RequestMethod.POST)
+	@RequestMapping("/")
+	public String welcome(Model model){ 		
+		//model.addAttribute("xxx", "main page");
+		model.addAttribute("customers", cusS.getAllCustomers());
+		model.addAttribute("cities", cityS.getAllCities());
+		return "base";}
+	
+	@RequestMapping(value="addCustomer", method=RequestMethod.POST)
 	public String add(
-			@RequestParam String login, @RequestParam("mail")String email, @RequestParam String password
+			@RequestParam String login, @RequestParam("eMail")String eMail, @RequestParam String password
 			){
 		
 		
-		cusS.addCustomer(login, password, email);
+		cusS.addCustomer(login, password, eMail);
 		
 		return "redirect:/";
+	}
+	
+	@RequestMapping(value="addCity", method=RequestMethod.POST)
+	public String addCity(
+			@RequestParam String cityName
+			){		
+		cityS.addCity(cityName);
+		
+		return "redirect:/";
+	}
+	
+	
+	@RequestMapping(value="aaa")
+	public String nextPage(){	
+		return "next";
 	}
 	
 	

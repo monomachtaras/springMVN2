@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Customer {
@@ -11,16 +12,35 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
 	private String login;
-
-	private String password;
-	
+	private String password;	
 	private String eMail;
+	
+	
+	@ManyToOne
+	private City city;
+	
 	
 	public Customer() {
 		
 	}
+
+	
+	
+	
+	public City getCity() {
+		return city;
+	}
+
+
+
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
+
+
 
 	public Customer(String login, String password, String eMail) {
 		super();

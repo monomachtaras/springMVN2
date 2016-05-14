@@ -10,11 +10,12 @@
 ${xxx}
 
 <form action="add" method="post">
- <input type="text" name="login" required>
- <input type="text" name="mail" required>
- <input type="text" name="password" required>
- <input type="submit" >
-
+<table>
+<tr><td>Input login</td> <td><input type="text" name="login" required></td></tr>
+<tr><td>Input mail</td> <td><input type="text" name="mail" required></td></tr>
+ <tr><td>Input pass</td><td><input type="text" name="password" required></td></tr>
+ <tr><td><input type="submit" ></td></tr>
+</table>
 </form>
 
 </body>
