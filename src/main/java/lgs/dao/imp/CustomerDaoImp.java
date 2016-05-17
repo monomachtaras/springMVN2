@@ -19,20 +19,20 @@ public class CustomerDaoImp implements CustomerDao {
 	
 	
 	public void addCustomer(Customer customer) {
-		manager.persist(customer);
-		
+		manager.persist(customer);		
 	}
 
-
-	public Customer getCustomerById(int id) {
-		
+	public Customer getCustomerById(int id) {		
 		return manager.find(Customer.class, id);
 	}
 
-
-	public List<Customer> getAllCustomers() {
-		
+	public List<Customer> getAllCustomers() {		
 		return manager.createQuery("from Customer", Customer.class).getResultList();
+	}
+
+	public void update(Customer customer) {
+		manager.merge(customer);
+		
 	}
 
 }

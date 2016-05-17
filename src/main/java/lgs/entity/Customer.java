@@ -21,10 +21,8 @@ public class Customer {
 	private City city;
 	
 	
-	public Customer() {
-		
+	public Customer() {		
 	}
-
 	
 	
 	

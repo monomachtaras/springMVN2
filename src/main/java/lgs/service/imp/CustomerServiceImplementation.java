@@ -27,14 +27,22 @@ public class CustomerServiceImplementation implements CustomerService {
 
 
 	public Customer getCustomerById(int id) {
-		cusD.getCustomerById(id);
-		return null;
+		return cusD.getCustomerById(id);		 
 	}
 
 
-	public List<Customer> getAllCustomers() {
-		
+	public List<Customer> getAllCustomers() {		
 		return cusD.getAllCustomers();
+	}
+
+    @Transactional
+	public void update(Customer customer) {
+		cusD.update(customer);		
+	}
+
+    @Transactional
+	public void addCustomer(Customer customer) {
+		cusD.addCustomer(customer);		
 	}
 
 }

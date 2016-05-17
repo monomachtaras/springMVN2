@@ -9,6 +9,7 @@ public interface CustomerDao {
 	void addCustomer(Customer customer);
 	Customer getCustomerById(int id);
 	List<Customer> getAllCustomers();
+	void update( Customer customer);
 	
 	
 	
