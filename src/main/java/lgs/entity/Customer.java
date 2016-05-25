@@ -1,6 +1,7 @@
 package lgs.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,7 +18,7 @@ public class Customer {
 	private String eMail;
 	
 	
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.EAGER)
 	private City city;
 	
 	
@@ -31,14 +32,9 @@ public class Customer {
 	}
 
 
-
-
 	public void setCity(City city) {
 		this.city = city;
 	}
-
-
-
 
 	public Customer(String login, String password, String eMail) {
 		super();

@@ -1,16 +1,10 @@
 package lgs.dao;
 
-import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import lgs.entity.Customer;
 
-public interface CustomerDao {
+public interface CustomerDao extends JpaRepository<Customer, Integer> {
 
-	void addCustomer(Customer customer);
-	Customer getCustomerById(int id);
-	List<Customer> getAllCustomers();
-	void update( Customer customer);
-	
-	
 	
 }
