@@ -13,10 +13,11 @@
         				http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 	
 
-	<import resource="classpath:/META-INF/appContext.xml" />
-
-
-	<bean id="viewResolver"
+	 <context:component-scan base-package="lgs.*"></context:component-scan>
+	 
+	 <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
+   	
+   	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass">
 			<value>org.springframework.web.servlet.view.tiles3.TilesView</value>
@@ -32,7 +33,10 @@
 			</list>
 		</property>
 	</bean>
-	
-	<mvc:annotation-driven></mvc:annotation-driven>
+<!-- 	процессе создания контроллеров мы также будем использовать аннотации для связывания параметров запросов с параметрами -->
+<!-- методов-обработчиков, выполнения проверки и преобразования сообщений. Поэтому одного компонента DefaultAnnotationHandlerMapping -->
+<!-- будет мало.К счастью, достаточно добавить в файл spitter-servlet.xml всего -->
+<!-- одну строку, чтобы обрести возможность использовать все остальные аннотации, имеющиеся в Spring MVC: -->
+	<mvc:annotation-driven></mvc:annotation-driven> 
 	
 </beans>
