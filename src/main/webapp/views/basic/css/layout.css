@@ -1,0 +1,29 @@
+
+.body{ background: pink; }
+
+/* this is for id's*/
+.header{ background: green;}
+/* this is for classes*/
+.header1{width:80%;background:#00995c;margin-left: 10%; }
+
+.header2{height: 38px; width:98%; background:#3378ff; margin-left: 1%; }
+.header4{width:15%;background:#d6ff99;margin-left: 1%; float: left; }
+.header5{height: 38px; width:10%;background:#1f3300;margin-left: 14%; float:left; }
+.header6{height: 38px; width:10%;background:#adff33;margin-left: 2%; float:left; }
+.header7{height: 38px; width:10%;background:#d6ff99;margin-left: 2%; float:left; }
+.header8{height: 38px; width:10%;background:#1affa3;margin-left: 2%; float:left;}
+.header9{height: 38px; width:10%;background:#1f3300;margin-left: 2%; float:left;  }
+.header10{height: 38px; width:10%;background:#7acc00;margin-left: 2%; float:left;  }
+
+
+.header3{width:98%;background:#2e4d00;margin-left: 1%;clear:left; }
+.header11{float:left; }
+.header12{float:left;}
+.header13{float:left;}
+.header14{float:left;}
+.header15{float:left;}
+.header16{}
+
+
+#body{background: pink;}
+#footer{ background: yellow;}
