@@ -11,7 +11,9 @@
 		<put-attribute name="body" value="/views/basic/body.jsp"></put-attribute>
 		<put-attribute name="footer" value="/views/basic/footer.jsp"></put-attribute>
 	</definition>
-
+    <definition name="showallcoordinates" extends="base">
+		<put-attribute name="body" value="/views/basic/showallcoordinates.jsp"></put-attribute>
+	</definition>
 	<definition name="next" extends="base">
 		<put-attribute name="body" value="/views/basic/alterbody.jsp"></put-attribute>
 	</definition>

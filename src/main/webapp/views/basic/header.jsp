@@ -9,35 +9,35 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
-
-<div class="header1" >
-   <div class="header2" >
-      <div class="header4">  ПН-ПТ 10-20 <br> СБ-НД  10-19 </div>
-      <div class="header5">про нас</div>
-      <div class="header6">дизайнерам</div>
-      <div class="header7">тканини</div>
-      <div class="header8">оплата</div>
-      <div class="header9">контакти</div>
-      <div class="header10">ru</div>
-   </div>
-   <div class="header3" >
-      <div class="header11">sell goods</div>
-      <div class="header12">beds</div>
-      <div class="header13">chairs</div>
-      <div class="header14">4</div>
-      <div class="header15">5</div>
-      <div class="header16">6</div>
-   </div>
+<div >
+<div id="first">sf</div><div id="first">sf</div><div id="first">sf</div>
 
 </div>
+<div id="sec">
+<ul id="menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="#">Categories</a>
+        <ul>
+            <li><a href="#">A</a></li>
+            <li><a href="#">B</a></li>
+            <li><a href="#">C</a></li>
+            <li><a href="/allCoordinates">All Coordinates</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Work</a>
+        <ul>
+            <li><a href="#">good</a></li>
+            <li><a href="#">nice</a></li>
+            <li><a href="#">excelent</a></li>
+            <li><a href="#">best</a></li>
+        </ul>
+    
+    </li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+</ul>
 
-
-
-
-
-
+</div>
 
 
 

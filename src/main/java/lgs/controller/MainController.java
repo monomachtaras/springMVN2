@@ -2,7 +2,10 @@ package lgs.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +16,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,12 +33,15 @@ import lgs.editor.CityEditor;
 import lgs.entity.City;
 import lgs.entity.Customer;
 import lgs.service.CityService;
+import lgs.service.CoordinatesService;
 import lgs.service.CustomerService;
 import lgs.valid.CustomerValid;
 
 @Controller
 public class MainController {
 	
+	@Autowired
+	private CoordinatesService coordinatesService;	
 	@Autowired
 	private CustomerService customerService;	
 	@Autowired
@@ -44,8 +51,41 @@ public class MainController {
 	@Autowired
 	private CustomerValid customerValid;
 	
+	@RequestMapping(value="/jsonservlet", method=RequestMethod.POST)
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		if (request == null) {
+			System.out.println("request is null");
+		} else {
+			BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+
+			String json = "";
+			if (br != null) {
+				String red = br.readLine();
+				if (red != null) {
+					json = red;
+					ArrayList<String> list = new ArrayList<String>();
+					StringTokenizer tokenizer = new StringTokenizer(json, " ");
+					while (tokenizer.hasMoreTokens()) {
+						String a = tokenizer.nextToken();
+						list.add(a);
+					}
+					coordinatesService.addCoordinates(list.get(0)+" "+list.get(1), list.get(2), list.get(3));
+				}
+			}
+			response.setContentType("application/json");
+
+		}	
+	}
 	
+	@RequestMapping("/allCoordinates")
+	public String showAllCoordinates(Model model){
+		model.addAttribute("allCoordinates", coordinatesService.getAllCoordinates());		
+		return "showallcoordinates";
+	}
 	
+
 	@RequestMapping("/")
 	public String welcome(Model model) 	{ 		
 		

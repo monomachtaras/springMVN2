@@ -13,6 +13,6 @@
 <body>
 <div class="header"><tiles:insertAttribute name="header"></tiles:insertAttribute></div>
 <div class="body"><tiles:insertAttribute name="body"></tiles:insertAttribute></div>
-<div id="footer"><tiles:insertAttribute name="footer"></tiles:insertAttribute></div>
+<div class="footer"><tiles:insertAttribute name="footer"></tiles:insertAttribute></div>
 </body>
 </html>

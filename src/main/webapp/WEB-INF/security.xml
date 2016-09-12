@@ -15,7 +15,7 @@
 		<intercept-url pattern="/create*" access="hasRole('ADMIN')" />
 	
 		<!-- Деактивує csrf фільтр -->
-		<!--	<csrf disabled="true" />-->
+			<csrf disabled="true" />
 
 		<!-- Описує процес логінування (login-page - URL сторінки логінування; 
 			login-processing-url - URL, яка здійснює логінування -->

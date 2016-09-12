@@ -11,8 +11,7 @@
 <input name="username" type="text">
 <input name="password" type="password">
 <input  type="submit">
-<input type="hidden"
-			name="${_csrf.parameterName}"
+<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}"/> 
 
 
